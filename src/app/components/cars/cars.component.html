@@ -1,0 +1,14 @@
+<section>
+    <table>
+        <thead>
+            <tr>
+                <th>לוחית רישוי</th><th>סוג רכב</th><th>4X4</th><th>נפח מנוע</th><th>שנת יצור</th><th>הערות</th><th>נמסר לעובד</th><th>תאריך טיפול</th><th>תאריך עדכון</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let car of allcars">
+            <tr>
+                <td>{{car.license_plate}}</td><td>{{car.cartype}}</td><td>{{car.fwd}}</td><td>{{car.engine_vol}}</td><td>{{car.year_of_prod}}</td><td>{{car.comment}}</td><td>{{car.employe}}</td><td>{{car.car_care |date:'dd-MM-yyyy'}}</td><td>{{car.edit_date|date:'dd-MM-yyyy'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

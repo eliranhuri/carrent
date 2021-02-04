@@ -1,0 +1,50 @@
+<form [formGroup]="addcarForm">
+  <br/>
+    <label>
+        license_plate:
+      <input type="text" formControlName="plate">
+    </label>
+   <br/><br/>
+    <label>
+        cartype:
+        <select id="ctype" formControlName="ctype">
+          <option value="">בחר דגם</option>
+          <option *ngFor="let ctype of types" value="{{ctype.carid}}">{{ ctype.company+"-"+ctype.cartype }}</option>
+      </select>
+    </label>
+    <br/><br/>
+    <label>
+        fwd:
+        <input type="checkbox" formControlName="fwd">
+      </label>
+      <br/><br/>
+      <label>
+        engine_vol:
+        <input type="text" formControlName="engine_vol">
+      </label>
+      <br/><br/>
+      <label>
+        year_of_prod:
+        <input type="text" formControlName="year_of_prod">
+      </label>
+      <br/><br/>
+      <label>
+        comment:
+        <input type="text" formControlName="comment">
+      </label>
+      <br/><br/>
+      <label>
+        employe:
+        <select id="employee" formControlName="employee">
+          <option value="">בחר עובד</option>
+          <option *ngFor="let e of emp" value="{{e.empid}}">{{ e.empname+"-"+e.emplastname }}</option>
+      </select>
+      </label>
+      <br/><br/>
+      <label>
+        car_care:
+        <input type="text" formControlName="car_care">
+      </label>
+      <br/><br/>
+  <input type="button" (click)="this.sendcar()" value="הוספת רכב" >
+  </form>
